@@ -1,0 +1,149 @@
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #eef2f7, #d9e2ec);
+  margin: 0;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Main Card */
+.container {
+  width: 440px;
+  margin: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s;
+}
+
+.container:hover {
+  transform: translateY(-3px);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+form input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  outline: none;
+  transition: border 0.2s;
+}
+
+form input:focus {
+  border-color: #4CAF50;
+}
+
+form button {
+  padding: 10px 16px;
+  border: none;
+  background: linear-gradient(135deg, #4CAF50, #43a047);
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+form button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #43a047, #388e3c);
+}
+
+/* Expense Header */
+.expense-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  color: #555;
+  padding: 8px 12px;
+  border-bottom: 2px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.expense-header .expense-title {
+  flex: 2;
+}
+
+.expense-header .amount {
+  flex: 1;
+  text-align: right;
+}
+
+/* Expense Items */
+.expense-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fafafa;
+  padding: 12px;
+  margin: 6px 0;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  transition: all 0.2s;
+}
+
+.expense-item:hover {
+  background: #f4f6f8;
+  transform: scale(1.01);
+}
+
+/* Columns inside expense item */
+.expense-item .expense-title {
+  flex: 2;
+  color: #333;
+  font-weight: 500;
+}
+
+.expense-item .amount {
+  flex: 1;
+  text-align: right;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.expense-item .delete-btn {
+  flex: 0;
+  margin-left: 10px;
+  background: #ff4d4d;
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s;
+}
+
+.expense-item .delete-btn:hover {
+  background: #e60000;
+  transform: scale(1.05);
+}
+
+/* Total Box */
+.total {
+  background: linear-gradient(135deg, #4CAF50, #43a047);
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  margin-top: 15px;
+}
