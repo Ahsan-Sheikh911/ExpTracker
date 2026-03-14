@@ -47,26 +47,3 @@ function App() {
 }
 
 export default App;
-
-// import { useState } from "react";
-
-// import Clock from "./components/Clock";
-
-// function App() {
-//   const [color, setColor] = useState("green");
-//   return (
-//     <div>
-//       <select
-//         style={{ margin: "10px" }}
-//         onChange={(e) => setColor(e.target.value)}
-//       >
-//         <option value="Green">Green</option>
-//         <option value="Blue">Blue</option>
-//         <option value="Red">Red</option>
-//       </select>
-//       <Clock color={color} />
-//     </div>
-//   );
-// }
-
-// export default App;
