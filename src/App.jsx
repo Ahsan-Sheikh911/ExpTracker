@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-import Clock from "./components/Clock";
 
 import ExpenseForm from "./components/ExpenseForm";
 import ExpenseList from "./components/ExpenseList";
@@ -40,8 +39,6 @@ function App() {
       <h3>Expense List</h3>
 
       <ExpenseList expenses={expenses} onDelete={deleteExpense} />
-
-      <Clock />
     </div>
   );
 }
