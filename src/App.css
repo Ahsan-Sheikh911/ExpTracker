@@ -1,17 +1,23 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: "Segoe UI", Arial, sans-serif;
   background: linear-gradient(135deg, #eef2f7, #d9e2ec);
-  margin: 0;
-  padding: 40px 0;
+  padding: 20px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   min-height: 100vh;
 }
 
 /* Main Card */
 .container {
-  width: 440px;
+  width: 100%;
+  max-width: 440px;
   margin: auto;
   background: white;
   padding: 30px;
@@ -28,36 +34,42 @@ h1 {
   text-align: center;
   margin-bottom: 25px;
   color: #333;
+  font-size: clamp(1.3rem, 5vw, 1.8rem);
 }
 
 /* Form Styling */
 form {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   margin-bottom: 20px;
 }
 
 form input {
-  flex: 1;
+  flex: 1 1 120px;
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 6px;
   outline: none;
   transition: border 0.2s;
+  font-size: 15px;
+  min-width: 0;
 }
 
 form input:focus {
-  border-color: #4CAF50;
+  border-color: #4caf50;
 }
 
 form button {
+  width: 100%;
   padding: 10px 16px;
   border: none;
-  background: linear-gradient(135deg, #4CAF50, #43a047);
+  background: linear-gradient(135deg, #4caf50, #43a047);
   color: white;
   border-radius: 6px;
   cursor: pointer;
   font-weight: 500;
+  font-size: 15px;
   transition: all 0.2s;
 }
 
@@ -75,6 +87,7 @@ form button:hover {
   padding: 8px 12px;
   border-bottom: 2px solid #ddd;
   margin-bottom: 10px;
+  font-size: 14px;
 }
 
 .expense-header .expense-title {
@@ -97,6 +110,7 @@ form button:hover {
   border-radius: 8px;
   border: 1px solid #eee;
   transition: all 0.2s;
+  gap: 8px;
 }
 
 .expense-item:hover {
@@ -104,11 +118,12 @@ form button:hover {
   transform: scale(1.01);
 }
 
-/* Columns inside expense item */
 .expense-item .expense-title {
   flex: 2;
   color: #333;
   font-weight: 500;
+  font-size: 14px;
+  word-break: break-word;
 }
 
 .expense-item .amount {
@@ -116,11 +131,13 @@ form button:hover {
   text-align: right;
   font-weight: 600;
   color: #2c3e50;
+  font-size: 14px;
+  white-space: nowrap;
 }
 
 .expense-item .delete-btn {
-  flex: 0;
-  margin-left: 10px;
+  flex-shrink: 0;
+  margin-left: 6px;
   background: #ff4d4d;
   border: none;
   color: white;
@@ -129,6 +146,7 @@ form button:hover {
   cursor: pointer;
   font-size: 13px;
   transition: all 0.2s;
+  white-space: nowrap;
 }
 
 .expense-item .delete-btn:hover {
@@ -138,7 +156,7 @@ form button:hover {
 
 /* Total Box */
 .total {
-  background: linear-gradient(135deg, #4CAF50, #43a047);
+  background: linear-gradient(135deg, #4caf50, #43a047);
   color: white;
   padding: 12px;
   border-radius: 8px;
@@ -146,4 +164,50 @@ form button:hover {
   font-weight: bold;
   letter-spacing: 0.5px;
   margin-top: 15px;
+  font-size: clamp(0.95rem, 3vw, 1.1rem);
+}
+
+/* Tablet */
+@media (max-width: 600px) {
+  body {
+    padding: 12px;
+    align-items: flex-start;
+  }
+
+  .container {
+    padding: 20px 16px;
+    border-radius: 10px;
+  }
+
+  form input {
+    flex: 1 1 100%;
+  }
+
+  form button {
+    width: 100%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 380px) {
+  .container {
+    padding: 16px 12px;
+  }
+
+  .expense-item {
+    flex-wrap: wrap;
+  }
+
+  .expense-item .expense-title {
+    flex: 1 1 100%;
+  }
+
+  .expense-item .amount {
+    flex: 1;
+    text-align: left;
+  }
+
+  .expense-item .delete-btn {
+    margin-left: 0;
+  }
 }
